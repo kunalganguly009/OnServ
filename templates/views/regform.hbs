@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OnServ | Register</title>
+    <link rel="stylesheet" href="./css/regform.css">
+</head>
+<body>
+  {{>navbar}}
+    <div class="container">
+       <form action="/reg" method="post" id={{contact-form}}>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">First Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="fname" name="fname" placeholder="Your name.." required="true">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Last Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="lname" name="lname" placeholder="Your last name..">
+            </div>
+          </div>
+
+          <div class="row" id="likesDisplay">
+            <div class="col-25">
+              <label for="likes">Likes</label>
+            </div>
+            <div class="col-75">
+              <input type="number" id="likes" name="likes">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="PhoneNumber">PhoneNumber</label>
+            </div>
+            <div class="col-75">
+              <input type="number" id="PhoneNumber" name="PhoneNumber" placeholder="Enter your Phonenumber..">
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-25">
+              <label for="City">City</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="City" name="City" placeholder="Your city name..">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="Area">Area</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="Area" name="Area" placeholder="Enter Area">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-25">
+              <label for="AreaPin">Area Pin</label>
+            </div>
+            <div class="col-75">
+                <input type="number" id="AreaPin" name="AreaPin" placeholder="Enter Area Pin ">
+            </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-25">
+            <label for="Appliances" >Appliances</label>
+          </div>
+          
+          <div class="col-75">
+            
+          
+            <input type="checkbox" id="WashingMachine" name="WashingMachine" value="WashingMachine" >
+            <label for="WashingMachine"  >Washing Machine</label>
+
+            <input type="checkbox" id="AirConditioner" name="AirConditioner" value="AirConditioner">
+            <label for="AirConditioner">Air Conditioner</label>
+
+            <input type="checkbox" id="Refrigerator" name="Refrigerator" value="Refrigerator">
+            <label for="Refrigerator">Refrigerator</label>
+
+            <input type="checkbox" id="InductionStove" name="InductionStove" value="InductionStove">
+            <label for="InductionStove">Induction Stove</label>
+
+            <input type="checkbox" id="VacuumCleaner" name="VacuumCleaner" value="VacuumCleaner">
+            <label for="VacuumCleaner">Vacuum Cleaner</label>
+
+            <input type="checkbox" id="Camera" name="Camera" value="Camera">
+            <label for="Camera">Camera</label>
+
+            <input type="checkbox" id="MicrowaveOven" name="MicrowaveOven" value="MicrowaveOven">
+            <label for="MicrowaveOven">Microwave Oven</label>
+
+            <input type="checkbox" id="WaterPurifier" name="WaterPurifier" value="WaterPurifier">
+            <label for="WaterPurifier">Water Purifier</label>
+
+            <input type="checkbox" id="Television" name="Television" value="Television">
+            <label for="Television">Television</label>
+
+            <input type="checkbox" id="MixerGrinder" name="MixerGrinder" value="MixerGrinder">
+            <label for="MixerGrinder">Mixer Grinder</label>
+
+            <input type="checkbox" id="Generator" name="Generator" value="Generator">
+            <label for="Generator">Generator</label>
+
+            <input type="checkbox" id="CeilingFan" name="CeilingFan" value="CeilingFan">
+            <label for="CeilingFan">Ceiling Fan</label>
+
+            <input type="checkbox" id="WaterHeater" name="WaterHeater" value="WaterHeater">
+            <label for="WaterHeater">Water Heater</label>
+
+            <input type="checkbox" id="Dryer" name="Dryer" value="Dryer">
+            <label for="Dryer">Dryer</label>
+           
+        </div>
+    </div>
+
+    <div class="row submit">
+      <input type="submit" value="submit">
+      
+    </div>
+          
+  </form>
+</div>
+
+  <script>
+    document.getElementById('likesDisplay').style.display='none';
+  </script>
+</body>
+</html>

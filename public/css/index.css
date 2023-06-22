@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-size: medium;
+}
+
+.table {
+  overflow: scroll;
+  width: 100%;
+  height: 70vh;
+}
+
+.srch_ctnr {
+  margin-top: auto;
+  width: 100%;
+  height: 100px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  flex-wrap: wrap;
+}
+
+.srch_ctnr ::placeholder {
+  color: rgb(139, 139, 139);
+}
+
+input {
+  outline: none;
+  padding: 5px;
+  text-align: center;
+}
+
+.srch {
+  border: 1px solid white;
+  height: 30px;
+  width: 200px;
+  border-radius: 15px 50px;
+  border: 1px solid rgb(54, 54, 54);
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  text-align: center;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+  background-color: #ddd;
+}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04aa6d;
+
+  color: white;
+}
+
+img {
+  height: 50px;
+  width: 50px;
+}
+
+::placeholder {
+  text-align: center;
+}
+
+.table::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.table {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+select {
+  width: 150px;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.likes i:hover{
+  color: blue;
+  cursor: pointer;
+}
+
+.clicked{
+  color: blue;
+}
+
+@media screen and (max-width: 400px) {
+  .srch_ctnr {
+    height: 175px;
+  }
+}

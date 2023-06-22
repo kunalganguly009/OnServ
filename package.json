@@ -1,0 +1,32 @@
+{
+  "name": "onserv",
+  "version": "1.0.0",
+  "description": "This is a project built for DotSlash5.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeHex-3/OnServ.git"
+  },
+  "author": "CodeHex",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeHex-3/OnServ/issues"
+  },
+  "homepage": "https://github.com/CodeHex-3/OnServ#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "handlebars-helpers": "^0.10.0",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.1.5",
+    "path": "^0.12.7",
+    "validator": "^13.7.0"
+  },
+  "engines": {
+    "node": "17.x"
+  }
+}

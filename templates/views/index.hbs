@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OnServ | Home</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  {{>navbar}}
+  <div class="main_ctnr">
+
+    <div class="srch_ctnr">
+
+      <input type="text" class="srch" id="myarea" placeholder="Search By Area" onkeyup="srch_area()">
+      <input type="text" class="srch" id="myAreapin" placeholder="Search By AreaPin" onkeyup="srch_areaPin()">
+      <input type="text" class="srch" id="mycity" placeholder="Search By city" onkeyup="srch_city()">
+      <input type="text" class="srch" id="myinput" placeholder="Search By Appliances" onkeyup="srch_app()">
+
+    </div>
+
+    <div class="table">
+      <table id="customers">
+        <tr>
+          <th>S.No.</th>
+          <th>UID</th>
+          <th>Name</th>
+          <th>Ph.No.</th>
+          <th>Area</th>
+          <th>AreaPin</th>
+          <th>City</th>
+          <th>App</th>
+          <th>Likes </th>
+        </tr>
+
+
+
+        {{#each apidata}}
+        <tr>
+
+          <td class="S.No.">{{ inc @index }}</td>
+          <td class="UID">{{_id}}</td>
+
+          <td class="user_name">{{fname}} {{lname}}</td>
+
+          <td class="pho_no">{{PhoneNumber}}</td>
+
+          <td class="area">{{Area}}</td>
+          <td class="area">{{AreaPin}}</td>
+
+
+
+          <td class="city">{{City}}</td>
+
+
+
+          <td>
+            <select name="Appliances" id="appliances{{ @index }}">
+
+              <option class="AppName">Check Out</option>
+              <option class="AppName">{{WashingMachine}}</option>
+              <option class="AppName">{{AirConditioner}}</option>
+              <option class="AppName">{{Refrigerator}}</option>
+              <option class="AppName">{{InductionStove}}</option>
+              <option class="AppName">{{VacuumCleaner}}</option>
+              <option class="AppName">{{Camera}}</option>
+              <option class="AppName">{{MicrowaveOven}}</option>
+              <option class="AppName">{{WaterPurifier}}</option>
+              <option class="AppName">{{Television}}</option>
+              <option class="AppName">{{MixerGrinder}}</option>
+              <option class="AppName">{{Generator}}</option>
+              <option class="AppName">{{CeilingFan}}</option>
+              <option class="AppName">{{WaterHeater}}</option>
+              <option class="AppName">{{Dryer}}</option>
+
+
+            </select>
+          </td>
+
+          <td class="likes">
+            <i class="material-icons thumbs" id="{{ _id }}">thumb_up</i>
+            <span> {{likes}}</span>
+          </td>
+
+        </tr>
+        {{/each}}
+
+
+      </table>
+    </div>
+
+
+  </div>
+
+  <script>
+    for (var numOfRow = 0; numOfRow < {{ count }}; numOfRow++ ) {
+      var options = document.getElementById(`appliances${numOfRow}`).options;
+      
+      for (var index = 1; index <= 14; index++) {
+        if (options[index].innerText === "") {
+          options[index].style.display = "none";
+        }
+        else {
+          options[index].style.display = "block";
+        }
+
+      }
+    }
+
+    function srch_area() {
+      let filter = document.getElementById('myarea').value.toUpperCase()
+      let mytable = document.getElementById('customers')
+      let tr = mytable.getElementsByTagName('tr')
+
+      for (var i = 0; i < tr.length; i++) {
+        if (filter!=''){
+          let td = tr[i].getElementsByTagName('td')[4]
+          if (td) {
+            if (tr[i].style.display!='none'){
+              let textval = td.innerHTML || td.textContent
+              if (textval.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              }
+              else {
+                tr[i].style.display = "none"
+              }
+            }
+          }
+        }
+        else{
+          tr[i].style.display='';
+        }
+      }
+    }
+
+
+    function srch_areaPin() {
+      let filter = document.getElementById('myAreapin').value.toUpperCase()
+      let mytable = document.getElementById('customers')
+      let tr = mytable.getElementsByTagName('tr')
+
+      for (var i = 0; i < tr.length; i++) {
+        if (filter!=''){
+          let td = tr[i].getElementsByTagName('td')[5];
+          if (td) {
+            if (tr[i].style.display!='none'){
+              let textval = td.innerHTML || td.textContent
+              if (textval.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+                
+              }
+              else {
+                tr[i].style.display = "none"
+              }
+            }
+          }
+        }
+        else{
+          tr[i].style.display='';
+        }
+      }
+    }
+
+
+
+
+    function srch_city() {
+      let filter = document.getElementById('mycity').value.toUpperCase()
+      let mytable = document.getElementById('customers')
+      let tr = mytable.getElementsByTagName('tr')
+
+      for (var i = 0; i < tr.length; i++) {
+        if (filter!=''){
+          let td = tr[i].getElementsByTagName('td')[6]
+          if (td) {
+            if (tr[i].style.display!='none'){
+              let textval = td.innerHTML || td.textContent
+              if (textval.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              }
+              else {
+                tr[i].style.display = "none"
+              }
+            }
+          }
+        }
+        else{
+          tr[i].style.display='';
+        }
+      }
+    }
+
+    function srch_app() {
+      let filter = document.getElementById('myinput').value.toUpperCase()
+      let mytable = document.getElementById('customers')
+      let tr = mytable.getElementsByTagName('tr')
+
+      for (var i = 0; i < tr.length; i++) {
+        if (filter!=''){
+          let td = tr[i].getElementsByTagName('td')[7]
+          if (td) {
+            if (tr[i].style.display!='none'){
+              let textval = td.innerHTML || td.textContent
+              if (textval.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+              }
+              else {
+                tr[i].style.display = "none"
+              }
+            }
+          }
+        }
+        else{
+          tr[i].style.display='';
+        }
+      }
+    }
+
+    Array.from(document.getElementsByClassName('thumbs')).forEach(ele=>{
+      ele.addEventListener('click', (event)=>{
+        targetUID = event.target.id;
+        likes = event.target.nextElementSibling.innerText;
+        if (Array.from(event.target.classList).includes('clicked')){
+          clicked = true;
+        }
+        else{
+          clicked = false;
+        }
+        
+        fetch("/likes", {
+          
+          method: "POST",
+          
+          body: JSON.stringify({
+            id: targetUID,
+            likes: likes,
+            clicked: clicked
+          }),
+          
+          headers: {
+            "Content-type": "application/json; charset=UTF-8"
+          }
+          })
+
+          .then(response => response.text())
+
+          .then(text => {
+            if (text==='OK'){
+              if (!clicked){
+                ++event.target.nextElementSibling.innerText;
+              }
+              else{
+                --event.target.nextElementSibling.innerText;
+              }
+              event.target.classList.toggle('clicked');
+            }
+            else{
+              console.log(text);
+            }
+          });
+
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>
